@@ -1,0 +1,22 @@
+<div class="userDetails">
+  <h2>User details</h2>
+
+  <ng-container *ngIf="userDetails$ | async as user">
+    <table>
+      <tr>
+        <td>User Id</td>
+        <td>{{ user.id }}</td>
+      </tr>
+      <tr>
+        <td>User Name</td>
+        <td>{{ user.name }}</td>
+      </tr>
+      <tr>
+        <td>User Type</td>
+        <td>{{ user.role }}</td>
+      </tr>
+    </table>
+    <br>
+    <button (click)="deleteUser(user.id)">supprimer</button>
+  </ng-container>
+</div>

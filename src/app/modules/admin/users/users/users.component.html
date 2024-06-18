@@ -1,0 +1,28 @@
+<h1>Users Admin</h1>
+<button (click)="addUser()" >Ajouter un utilisateur</button>
+
+<div class="container row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom de l'utilisateur</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(user of users; track $index) {
+        <tr>
+          <td>{{ user.id }}</td> 
+          <td>{{ user.name }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <button type="button" (click)="getUserById(user.id)">Voir +</button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
